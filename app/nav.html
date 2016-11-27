@@ -1,0 +1,9 @@
+  <div class="panel panel-default" ng-controller="MenuCtrl as mn">
+    <div class="panel-body">
+
+      <div class="btn-group" role="group" ng-repeat="m in mn.menuItems track by $index">
+        <a class="btn btn-default" data-ui-sref="{{m.name}}" data-ui-sref-active="active">{{m.heading}}</a>
+      </div>
+
+    </div>
+  </div>

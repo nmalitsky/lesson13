@@ -1,0 +1,12 @@
+<form name="edit" novalidate data-layout="row">
+    <p>Вес: <input type="number" maxlength="20" ng-model="pokemon.weight" required>, рост: <input type="number" maxlength="20" ng-model="pokemon.height" required></p>
+
+    <div>
+        <button class="btn-call-to-action btn-small" ui-sref="detail">
+            Save
+        </button>
+        <button class="btn-cancel btn-small" ui-sref="detail" data-ng-click="cancel()">
+            Cancel
+        </button>
+    </div>
+</form>

@@ -1,0 +1,37 @@
+<style>
+    .ng-dirty.ng-invalid {
+        border-color: #FA787E;
+    }
+
+    .ng-dirty.ng-valid {
+        border-color: #78FA89;
+    }
+
+</style>
+
+<form name="pokemonForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+	<div ng-class="{ 'has-error': pokemonForm.loginInput.$touched && pokemonForm.loginInput.$invalid }">
+	        <input class="form-control" data-ng-model="vm.newPokemon.name" type="text" placeholder="Имя" required ng-minlength="3" name="pokemonName">
+	</div>
+        <div class="help-block" ng-messages="pokemonForm.pokemonName.$error" ng-if="pokemonForm.pokemonName.$touched">
+            <p ng-message="minlength"><small>Имя не менее 3 символов</small></p>
+            <p ng-message="required"><small>Имя обязателено</small></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Вес</label>
+        <input class="form-control" data-ng-model="vm.newPokemon.weight" type="text" placeholder="Вес"
+               data-ng-pattern="/^(\d)+$/">
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox">
+            Активен
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default" data-ng-click="vm.addPokemon(vm.newPokemon)"
+            data-ng-disabled="pokemonForm.$invalid">Добавить
+    </button>
+</form>
