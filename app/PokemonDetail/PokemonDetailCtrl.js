@@ -120,9 +120,7 @@ angular
                     }
 
                     if (form.$valid) {
-			console.log(childScope.editValue)
                         scope.ndSaveFn(childScope.editValue).finally(function () {
-			    //scope.ndModel = form.input.$viewValue;
                             cancel();
                         });
                     }

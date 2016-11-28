@@ -7,6 +7,7 @@
     <div class="media-body">
         <span class="badge">{{vm.pokemon.id}}</span>
         <input type="checkbox" data-ng-model="vm.rename"/>
+	<p>
         <h4 class="media-heading"  data-nd-inline-edit
             data-nd-model="vm.pokemon.name"
             data-nd-trigger="vm.rename"
@@ -15,6 +16,7 @@
 	    data-nd-cancel="vm.toggleRename">
             <span>{{vm.pokemon.name | uppercase}}</span>
         </h4>
+	</p>
 	<br>
 	<p>
 	<a class="btn btn-default" data-ui-sref="detail.edit">Edit</a>
